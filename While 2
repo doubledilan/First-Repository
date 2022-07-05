@@ -1,0 +1,23 @@
+/*Faça um programa que solicite que o usuário informe dois números
+e exiba todos os números existentes entre os valores informados.
+Os valores informados também deverão ser exibidos. O usuário poderá
+informar quantos pares de números desejar. Considere que o primeiro
+número será sempre menor que o segundo valor informado.*/
+#include <stdio.h>
+int main(){
+    int primeiroValor, segundoValor, entre, sucessor, continuar=1;
+    while(continuar == 1){
+        printf("Informe o primeiro valor: ");
+        scanf("%d", &primeiroValor);
+        printf("Informe o segundo valor: ");
+        scanf("%d", &segundoValor);
+        sucessor = primeiroValor;
+        while(sucessor <= segundoValor){
+            printf("%d,", sucessor);
+            sucessor++;
+        }
+        printf("Deseja continuar? Sim=1, Não=2. ");
+        scanf("%d", &continuar);
+    }
+    return 0;
+}

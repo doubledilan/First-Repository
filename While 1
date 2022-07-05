@@ -1,0 +1,33 @@
+/*Uma maneira de calcular a raiz quadrada exata de um número é
+realizando subtrações sucessivas do número, que deseja obter a
+raiz, por valores ímpares a partir do número 1. A subtração acaba
+quando o resultado da operação for igual a zero e o resultado
+da raiz é igual ao número de subtrações realizadas.
+ Por exemplo, considere que o usuário deseja obter o resultado da
+raiz quadrada de 25. Seguindo o cálculo proposto, faríamos a
+seguinte conta:
+25= 25 – 1 = 24; 24 – 3 = 21; 21 – 5 = 16 ; 16 – 7 = 9; 9 – 9 =0.
+Note que houve 5 subtrações sucessivas e o resultado final foi
+zero, por isso pode-se afirmar que a raiz de 25 é igual a 5.
+ Faça um programa que receba um valor e informe o resultado da
+ raiz quadrada através da subtração dos valores. O usuário poderá
+ executar o programa quantas vezes desejar.*/
+#include <stdio.h>
+int main(){
+    int continuar=1, valor, contador=1, subtraendo=1;
+    float raiz;
+    while(continuar == 1){
+        printf("Informe um valor que deseja saber a raiz quadrada: ");
+        scanf("%d", &valor);
+            while(valor == 0){
+                valor = valor - subtraendo;
+                subtraendo = subtraendo + 2;
+                contador++;
+                raiz = contador;
+            }
+        printf("A raiz quadrada de %d é: %f.", valor, raiz);
+        printf("Deseja continuar?\nSim=1; Não=2: ");
+        scanf("%d", &continuar);
+    }
+    return 0;
+}
